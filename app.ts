@@ -4,6 +4,10 @@ let yttreGrid = g.cell
 let timeout = 0 
 let rad = 0 
 let column = 0
+
+//Sätter ut vilka rutor som ska vara färgade 
+
+
 /*let block = [
   {
     rad: 0,
@@ -65,6 +69,10 @@ let zVänster= [
 
   let colojr = randomItem ("red", "green", "blue", "yellow", "purple", "white")
 
+//gjorde denna kodningen grön då jag inte har gjort en slumpval av block, zVänster och den avlånga blocken
+//Denna kodning är till för den avläng blocken 
+//Kodningen är nästan den samma för de olika blocken. ädna skillnaden är namnen på variablerna nästan. 
+// Behöver sätta all kodning för blocken på en och samma "update" men hann ej.
 
 
 /*  let h = 4
@@ -151,9 +159,9 @@ update =  () => {
 
       
       timeout = 0 
-      if( rad != 18 + längd&& g.cell(rad+längd,column).color == null) { 
+      if( rad != 18 + längd && g.cell(rad+längd,column).color == null) { 
        
-        
+        //tar bort en hel column och gör den ofärgad
         for(let i = 0 ; i< zVänster.length; i++){
           g.cell(rad + zVänster[i].rad ,column + zVänster[i].column) .color = null
         }
@@ -169,11 +177,13 @@ update =  () => {
 if (keyboard.d){
   g.cell(rad,column).color = null
  
+  //Gör om blocket och ändrar färgen på rutorna så att det kan flytta till höger när tangent "d" trycks 
   for(let i = 0 ; i< zVänster.length; i++){
     g.cell(rad + zVänster[i].rad ,column + zVänster[i].column) .color = null
   }
 
   column++ 
+  //Gör om blocket och ändrar färgen på rutorna så att det kan flytta till höger när tangent "a" trycks 
 
 }
 if (keyboard.a){g.cell(rad,column).color = null
@@ -184,6 +194,7 @@ if (keyboard.a){g.cell(rad,column).color = null
   
   column--
 }
+//gör så att Blocket inte stiger över till höger eller vänster på rutorna så att det försvinner  
 if ( column == 12 ){ 
   column = 11
 }
@@ -196,12 +207,16 @@ for(let i = 0 ; i< zVänster.length; i++){
   g.cell(rad + zVänster[i].rad ,column + zVänster[i].column) .color = colojr
 }
 
+if( keyboard.a && column != null  ) {
 
+
+}
 }
 
 
 
-
+//gjorde denna kodningen grön då jag inte har gjort en slumpval av block, zVänster och den avlånga blocken
+//Denna kodning är till för den kvadratiska blocken 
 
 
 /*let height = 2 
